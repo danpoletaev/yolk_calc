@@ -1,0 +1,23 @@
+$phone: 640px;
+$tablet: 768px;
+$desktop: 1024px ;
+
+@media(max-width: $phone){
+  .calculator_container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 20px;
+
+  }
+}
+
+@media(min-width: $tablet){
+  .calculator_container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+  }
+}
