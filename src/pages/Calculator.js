@@ -124,12 +124,13 @@ const Calculator = () => {
         calculateTotalDuty()
     }, [price, isFirst, city])
 
-    const formatNumber = (duty = totalDuty, decimal) => {
+    const formatNumber = (duty = totalDuty, decimal = 0) => {
         return new Intl.NumberFormat(
             'en-GB',
             {
                 style: 'currency',
                 currency: 'GBP',
+                minimumFractionDigits: decimal,
                 maximumFractionDigits: decimal
             }).format(duty)
     }
