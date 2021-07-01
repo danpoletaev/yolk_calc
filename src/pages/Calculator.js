@@ -1,5 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import './Calculator.scss'
+import CalcButton from "../components/CalcButton";
+import PriceInput from "../components/PriceInput";
+import ResultContainer from "../components/ResultContainer";
+import DropDownSelect from "../components/DropDownSelect";
+import RangeInput from "../components/RangeInput";
 
 const Calculator = () => {
 
@@ -125,15 +130,23 @@ const Calculator = () => {
         calculateTotalDuty()
     }, [price, isAdditional, region])
 
-    const formatNumber = (duty = totalDuty, decimal = 0) => {
-        return new Intl.NumberFormat(
-            'en-GB',
-            {
-                style: 'currency',
-                currency: 'GBP',
-                minimumFractionDigits: decimal,
-                maximumFractionDigits: decimal
-            }).format(duty)
+    const formatNumber = (duty = totalDuty, decimal = 0, currency = true) => {
+        if (currency)
+            return new Intl.NumberFormat(
+                'en-GB',
+                {
+                    style: 'currency',
+                    currency: 'GBP',
+                    minimumFractionDigits: decimal,
+                    maximumFractionDigits: decimal,
+                }).format(duty)
+        else
+            return new Intl.NumberFormat(
+                'en-GB',
+                {
+                    minimumFractionDigits: decimal,
+                    maximumFractionDigits: decimal,
+                }).format(duty)
     }
 
     const getConfig = () => {
@@ -182,7 +195,8 @@ const Calculator = () => {
             if greater or equals - we are finding difference between previous and current amount and charge percent on that amount
             if not - we are finding difference between our price and previous "amount to" and charge percent on that amount
             in the end we charge percent for "zero percent amount" if it is additional property
-        */}
+        */
+        }
         for (let [index, rate] of current_config.rates.entries()) {
             let diff = 0;
             if (index !== 0) {
@@ -201,52 +215,39 @@ const Calculator = () => {
 
     return (
         <div className='calculator_container'>
+
             <label>Where are you buying?</label>
-            <select id="cars" name="cars" onChange={event => setRegion(event.target.value)}>
-                <option value="England">England</option>
-                <option value="Scotland">Scotland</option>
-                <option value="Wales">Wales</option>
-                <option value="Northern Ireland">Northern Ireland</option>
-            </select>
+            <DropDownSelect handleClick={(value) => setRegion(value)}/>
+
             <label> Are you a first time buyer? </label>
-            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                <button type="button" onClick={() => {
+            <div className='button_container'>
+                <CalcButton text='Yes' handleClick={() => {
                     setIsFirst(true)
                     setIsAdditional(false)
-                }}>
-                    Yes
-                </button>
-                <button type="button" onClick={() => setIsFirst(false)}>
-                    No
-                </button>
+                }}/>
+                <CalcButton text='No' handleClick={() => setIsFirst(false)}/>
             </div>
-            {!isFirst && <div>
-                <label> Will this be your only property? </label>
-                <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
-                    <button type="button" onClick={() => setIsAdditional(false)}>
-                        Yes
-                    </button>
-                    <button type="button" onClick={() => setIsAdditional(true)}>
-                        No
-                    </button>
-                </div>
+            {!isFirst && <label style={{marginTop: '15px'}}> Will this be your only property? </label>}
+
+            {!isFirst && <div className='button_container'>
+                <CalcButton text='Yes' handleClick={() => setIsAdditional(false)}/>
+                <CalcButton text='No' handleClick={() => setIsAdditional(true)}/>
             </div>}
-            <label htmlFor="price">Property price in pounds:
-                <input type="text" id="price" name="price"
-                       min="10000" max="10000000" value={formatNumber(price, 0)}
-                       onChange={(event) => handlePriceChange(event)}/>
-            </label>
-            <input type="range" min="10000" max="10000000" value={price} id="myRange" onChange={(event) => {
-                handlePriceChange(event)
-            }}/>
-            <div>
-                <h3>Result: </h3>
-                <p>Type: {!isAdditional ? 'First Time buyer' : 'Additional property'}</p>
-                <div>
-                    <h4>Your stamp duty will be</h4>
-                    <p>{formatNumber(totalDuty, 2)}</p>
-                </div>
-                <p>You do not qualify for first-time buyer stamp duty tax relief because the property is over £500,000.00. Normal tax rates apply</p>
+
+            <div className='price_container'>
+                <p className='property'>Property price:</p>
+                <p className='property_price'>{formatNumber(price, 2)}</p>
+            </div>
+
+            <PriceInput handlePriceChange={handlePriceChange} value={formatNumber(price, 0, false)}/>
+
+            <RangeInput price={price} handleChange={handlePriceChange}/>
+
+            <ResultContainer header='Your stamp duty will be' result_value={formatNumber(totalDuty, 2)}/>
+
+            <div className='alert_text_container'>
+                <p className='alert_text'>You do not qualify for first-time buyer stamp duty tax relief because the property is over
+                    £500,000.00. Normal tax rates apply</p>
             </div>
         </div>
     )

@@ -1,0 +1,40 @@
+.range_container {
+  margin-bottom: 15px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: #ced4da;
+  height: 6px;
+  border-radius: 6px;
+  color: #ced4da;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  background: #00538b;
+  cursor: pointer;
+  border: 3px solid white;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  background: #00538b;
+  cursor: pointer;
+  border: 3px solid white;
+}
+
+input[type=range]::-ms-thumb {
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  background: #00538b;
+  cursor: pointer;
+  border: 3px solid white;
+}

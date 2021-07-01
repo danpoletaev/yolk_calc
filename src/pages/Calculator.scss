@@ -1,23 +1,71 @@
 $phone: 640px;
 $tablet: 768px;
-$desktop: 1024px ;
+$desktop: 1024px;
 
-@media(max-width: $phone){
-  .calculator_container {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    border: 1px solid gray;
-    border-radius: 20px;
-    padding: 20px;
-
-  }
+.calculator_container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: -1px 1px 10px gray;
 }
 
-@media(min-width: $tablet){
+label, select, input {
+  margin-bottom: 15px;
+}
+
+label, p.property {
+  color: #58677d;
+  text-align: left;
+  font-size: 16px;
+}
+
+p.property_price {
+  color: #00538b;
+  font-family: Lato,sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.price_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert_text {
+  font-size: 14px;
+  color: #58677d;
+  width: 75%;
+  text-align: center;
+}
+
+.alert_text_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input:focus, select:focus {
+  outline-width: 0;
+}
+
+@media(min-width: $tablet) {
   .calculator_container {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
+    width: 481px;
+  }
+  label, p.property, p.property_price {
+    font-size: 20px;
+  }
+  .alert_text {
+    font-size: 18px;
   }
 }
