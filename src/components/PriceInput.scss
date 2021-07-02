@@ -31,11 +31,7 @@ span.symbol_span {
 
 
 @media(min-width: $tablet) {
-  input.input_price {
-    font-size: 19px;
-  }
-
-  span.symbol_span {
+  input.input_price, span.symbol_span {
     font-size: 19px;
   }
 }

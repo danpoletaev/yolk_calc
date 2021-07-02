@@ -57,8 +57,11 @@ p.property_price {
   align-items: center;
 }
 
-input:focus, select:focus {
+*:focus {
+  appearance: none;
   outline-width: 0;
+  outline: none !important;
+  box-shadow: 1px 1px 1px 1px #e4e2e2;
 }
 
 @media(min-width: $tablet) {
