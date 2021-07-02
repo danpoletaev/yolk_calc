@@ -1,6 +1,4 @@
-$phone: 640px;
-$tablet: 768px;
-$desktop: 1024px;
+@import "../config";
 
 .calculator_container {
   display: flex;
@@ -9,9 +7,11 @@ $desktop: 1024px;
   border-radius: 20px;
   padding: 30px;
   box-shadow: -1px 1px 10px gray;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-label, select, input {
+label, select{
   margin-bottom: 15px;
 }
 
@@ -29,9 +29,12 @@ p.property_price {
 }
 
 .button_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 30px;
+  grid-template-areas:
+    ". .";
 }
 
 .price_container {

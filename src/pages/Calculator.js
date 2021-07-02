@@ -13,6 +13,12 @@ const Calculator = () => {
     const [isFirst, setIsFirst] = useState(true)
     const [region, setRegion] = useState('England')
     const [isAdditional, setIsAdditional] = useState(false)
+    const [activeBtn, setActiveBtn] = useState({
+        btn1: false,
+        btn2: false,
+        btn3: false,
+        btn4: false
+    })
 
     const config = {
         // additional_pay_from - amount under each properties are not subject to the additional SDLT rate
@@ -220,18 +226,50 @@ const Calculator = () => {
             <DropDownSelect handleClick={(value) => setRegion(value)}/>
 
             <label> Are you a first time buyer? </label>
+            {console.log(activeBtn)}
             <div className='button_container'>
                 <CalcButton text='Yes' handleClick={() => {
                     setIsFirst(true)
                     setIsAdditional(false)
-                }}/>
-                <CalcButton text='No' handleClick={() => setIsFirst(false)}/>
+                    setActiveBtn({
+                        ...activeBtn,
+                        btn1: true,
+                        btn2: false,
+                        btn3: false,
+                        btn4: false
+                    })
+                }} active={activeBtn.btn1}/>
+                <CalcButton text='No'
+                            handleClick={() => {
+                                setIsFirst(false)
+                                setActiveBtn({
+                                    ...activeBtn,
+                                    btn1: false,
+                                    btn2: true
+                                })
+                            }}
+                            active={activeBtn.btn2}
+                            />
             </div>
             {!isFirst && <label style={{marginTop: '15px'}}> Will this be your only property? </label>}
 
             {!isFirst && <div className='button_container'>
-                <CalcButton text='Yes' handleClick={() => setIsAdditional(false)}/>
-                <CalcButton text='No' handleClick={() => setIsAdditional(true)}/>
+                <CalcButton text='Yes' handleClick={() => {
+                    setIsAdditional(false)
+                    setActiveBtn({
+                        ...activeBtn,
+                        btn3: true,
+                        btn4: false
+                    })
+                }} active={activeBtn.btn3}/>
+                <CalcButton text='No' handleClick={() => {
+                    setIsAdditional(true)
+                    setActiveBtn({
+                        ...activeBtn,
+                        btn3: false,
+                        btn4: true
+                    })
+                }} active={activeBtn.btn4}/>
             </div>}
 
             <div className='price_container'>

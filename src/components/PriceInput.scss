@@ -1,13 +1,10 @@
-$phone: 640px;
-$tablet: 768px;
-$desktop: 1024px;
+@import "../config";
 
 input.input_price {
   -webkit-appearance: none;
-  width: calc(100% - 70px);
-  padding-left: 12px;
+  flex: 1;
+  padding: 15px 0 15px 12px;
   background: #f7f8fb;
-  height: 45px;
   border: 1px solid #e4e2e2;
   border-radius: 0 5px 5px 0;
   font-size: 15px;
@@ -16,33 +13,29 @@ input.input_price {
 
 .input_group {
   display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  width: 100%;
   margin-bottom: 15px;
+  justify-content: stretch;
 }
 
 span.symbol_span {
-  display:-webkit-flex;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 42px;
-  height: 54.5px;
   background: #e1e5eb;
   color: #00538b;
+  width: 42px;
+  font-size: 15px;
   border-radius: 5px 0 0 5px;
+  margin-right: -2px;
 }
 
 
 @media(min-width: $tablet) {
   input.input_price {
-    height: 50px;
     font-size: 19px;
   }
 
   span.symbol_span {
-    height: 54.5px;
     font-size: 19px;
   }
 }

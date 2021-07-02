@@ -7,8 +7,9 @@ input[type=range] {
   width: 100%;
   background: #ced4da;
   height: 6px;
-  border-radius: 6px;
+  border-radius: 5px;
   color: #ced4da;
+  cursor: pointer;
 }
 
 input[type=range]::-webkit-slider-thumb {
