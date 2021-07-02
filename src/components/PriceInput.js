@@ -5,7 +5,7 @@ const PriceInput = ({value, handlePriceChange}) => {
     return (
         <div className='input_group'>
             <span className='symbol_span'>£</span>
-            <input type="text" id="price" name="price"
+            <input type="text" id="price" name="price" pattern="\d*"
                    min="10000" max="10000000" value={value}
                    onChange={(event) => handlePriceChange(event)}
                    className='input_price'

@@ -3,6 +3,8 @@
   display: flex;
   justify-content: center;
   padding-top: 50px;
+  overflow-x: hidden;
+
 }
 
 .App-logo {
