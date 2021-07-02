@@ -7,8 +7,6 @@
   border-radius: 20px;
   padding: 30px;
   box-shadow: -1px 1px 10px gray;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 label, select{
@@ -32,7 +30,7 @@ p.property_price {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  gap: 0px 30px;
+  gap: 0 30px;
   grid-template-areas:
     ". .";
 }
