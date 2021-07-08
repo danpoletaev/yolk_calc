@@ -1,36 +1,35 @@
-@import "../config";
+@import "../variables";
 
 input.input_price {
   -webkit-appearance: none;
   flex: 1;
   padding: 15px 0 15px 12px;
   border: none;
-  font-size: 16px;
+  font-size: $phone-font-size;
   border-radius: 0 5px 5px 0;
-  color: #00538b;
+  color: $blue-primary-color;
 }
 
 .input_group {
   display: flex;
   margin-bottom: 15px;
   border-radius: 5px;
-  border: 1px solid #e4e2e2;
-  background: #e1e5eb;
+  border: 1px solid $border-shadow-color;
 }
 
 span.symbol_span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #e1e5eb;
-  color: #00538b;
+  background: $border-shadow-color;
+  color: $blue-primary-color;
   width: 42px;
-  font-size: 15px;
+  font-size: $phone-font-size
 }
 
 
 @media(min-width: $tablet) {
   input.input_price, span.symbol_span {
-    font-size: 19px;
+    $tablet-font-size: 20px;
   }
 }

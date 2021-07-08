@@ -1,15 +1,15 @@
-@import "../config";
+@import "../variables";
 
 select.select_region {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: #00538b;
-  border: 1px solid #e4e2e2;
+  color: $blue-primary-color;
+  border: 1px solid $border-shadow-color;
   border-radius: 5px;
   padding: 15px;
-  font-size: 16px;
-  background: #f7f8fb url("data:image/svg+xml;utf8,<svg fill='%2300538b' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat;
+  font-size: $phone-font-size;
+  background: $input-button-background url("data:image/svg+xml;utf8,<svg fill='%2300538b' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat;
   background-position-x: 98%;
   background-position-y: 50%;
   @include hover {
@@ -20,7 +20,7 @@ select.select_region {
 
 @media(min-width: $tablet) {
   select.select_region {
-    font-size: 20px;
+    font-size: $tablet-font-size;
     padding: 20px;
   }
 }

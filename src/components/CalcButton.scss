@@ -1,22 +1,22 @@
-@import "../config";
+@import "../variables";
 
 .calc_button {
   border: 1px solid;
-  border-color: #e4e2e2;
-  background: #f7f8fb;
+  border-color: $border-shadow-color;
+  background: $input-button-background;
   border-radius: 5px;
-  color: #00538b;
-  font-size: 16px;
+  color: $blue-primary-color;
+  font-size: $phone-font-size;
   padding: 10px;
   @include hover {
     cursor: pointer;
-    border-color: #005891;
+    border-color: $hover-border;
   }
 }
 
 @media(min-width: $tablet) {
   .calc_button {
     padding: 15px;
-    font-size: 20px;
+    font-size: $tablet-font-size;
   }
 }

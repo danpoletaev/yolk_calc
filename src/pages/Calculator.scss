@@ -1,11 +1,11 @@
-@import "../config";
+@import "../variables";
 
 .calculator_container {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   padding: 30px;
-  box-shadow: -1px 1px 10px #e4e2e2;
+  box-shadow: -1px 1px 10px $border-shadow-color;
   font-family: Lato,sans-serif;
 }
 
@@ -14,15 +14,15 @@ label, select{
 }
 
 label, p.property {
-  color: #58677d;
+  color: $font-color;
   text-align: left;
-  font-size: 16px;
+  font-size: $phone-font-size;
 }
 
 p.property_price {
-  color: #00538b;
+  color: $blue-primary-color;
   font-weight: 700;
-  font-size: 16px;
+  font-size: $phone-font-size;
 }
 
 .button_container {
@@ -41,8 +41,8 @@ p.property_price {
 }
 
 .alert_text {
-  font-size: 14px;
-  color: #58677d;
+  font-size: $phone-alert-f-size;
+  color: $font-color;
   width: 75%;
   text-align: center;
 }
@@ -58,14 +58,14 @@ p.property_price {
   appearance: none;
   outline-width: 0;
   outline: none !important;
-  box-shadow: 1px 1px 1px 1px #e4e2e2;
+  box-shadow: 1px 1px 1px 1px $border-shadow-color;
 }
 
 @media(min-width: $tablet) {
   label, p.property, p.property_price {
-    font-size: 20px;
+    font-size: $tablet-font-size
   }
   .alert_text {
-    font-size: 18px;
+    font-size: $tablet-alert-f-size;
   }
 }
