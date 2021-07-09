@@ -1,6 +1,6 @@
 @import "../variables";
 
-.calculator_container {
+.calculatorContainer {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -19,13 +19,13 @@ label, p.property {
   font-size: $phone-font-size;
 }
 
-p.property_price {
+p.propertyPrice {
   color: $blue-primary-color;
   font-weight: 700;
   font-size: $phone-font-size;
 }
 
-.button_container {
+.buttonContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -34,20 +34,20 @@ p.property_price {
     ". .";
 }
 
-.price_container {
+.priceContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.alert_text {
+.alertText {
   font-size: $phone-alert-f-size;
   color: $font-color;
   width: 75%;
   text-align: center;
 }
 
-.alert_text_container {
+.alertTextContainer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -62,10 +62,10 @@ p.property_price {
 }
 
 @media(min-width: $tablet) {
-  label, p.property, p.property_price {
+  label, p.property, p.propertyPrice {
     font-size: $tablet-font-size
   }
-  .alert_text {
+  .alertText {
     font-size: $tablet-alert-f-size;
   }
 }

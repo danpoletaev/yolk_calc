@@ -1,6 +1,6 @@
 @import "../variables";
 
-input.input_price {
+input.inputPrice {
   -webkit-appearance: none;
   flex: 1;
   padding: 15px 0 15px 12px;
@@ -10,14 +10,14 @@ input.input_price {
   color: $blue-primary-color;
 }
 
-.input_group {
+.inputGroup {
   display: flex;
   margin-bottom: 15px;
   border-radius: 5px;
   border: 1px solid $border-shadow-color;
 }
 
-span.symbol_span {
+span.symbolSpan {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@ span.symbol_span {
 
 
 @media(min-width: $tablet) {
-  input.input_price, span.symbol_span {
+  input.inputPrice, span.symbolSpan {
     $tablet-font-size: 20px;
   }
 }

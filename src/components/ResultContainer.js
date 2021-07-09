@@ -3,8 +3,8 @@ import './ResultContainer.scss'
 
 const ResultContainer = ({header, result_value}) => {
     return (
-        <div className='result_container'>
-            <div className='duty_label'>{header}</div>
+        <div className='resultContainer'>
+            <div className='dutyLabel'>{header}</div>
             <div className='showresult'>
                 <span>{result_value}</span>
             </div>

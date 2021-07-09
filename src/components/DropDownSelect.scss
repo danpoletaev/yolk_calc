@@ -1,6 +1,6 @@
 @import "../variables";
 
-select.select_region {
+select.selectRegion {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -19,7 +19,7 @@ select.select_region {
 
 
 @media(min-width: $tablet) {
-  select.select_region {
+  select.selectRegion {
     font-size: $tablet-font-size;
     padding: 20px;
   }

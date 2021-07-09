@@ -1,6 +1,6 @@
 @import "../variables";
 
-.calc_button {
+.calcButton {
   border: 1px solid;
   border-color: $border-shadow-color;
   background: $input-button-background;
@@ -15,7 +15,7 @@
 }
 
 @media(min-width: $tablet) {
-  .calc_button {
+  .calcButton {
     padding: 15px;
     font-size: $tablet-font-size;
   }

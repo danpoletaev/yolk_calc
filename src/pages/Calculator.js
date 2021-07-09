@@ -220,14 +220,14 @@ const Calculator = () => {
     }
 
     return (
-        <div className='calculator_container'>
+        <div className='calculatorContainer'>
 
             <label>Where are you buying?</label>
             <DropDownSelect handleClick={(value) => setRegion(value)}/>
 
             <label> Are you a first time buyer? </label>
             {console.log(activeBtn)}
-            <div className='button_container'>
+            <div className='buttonContainer'>
                 <CalcButton text='Yes' handleClick={() => {
                     setIsFirst(true)
                     setIsAdditional(false)
@@ -253,7 +253,7 @@ const Calculator = () => {
             </div>
             {!isFirst && <label style={{marginTop: '15px'}}> Will this be your only property? </label>}
 
-            {!isFirst && <div className='button_container'>
+            {!isFirst && <div className='buttonContainer'>
                 <CalcButton text='Yes' handleClick={() => {
                     setIsAdditional(false)
                     setActiveBtn({
@@ -272,9 +272,9 @@ const Calculator = () => {
                 }} active={activeBtn.btn4}/>
             </div>}
 
-            <div className='price_container'>
+            <div className='priceContainer'>
                 <p className='property'>Property price:</p>
-                <p className='property_price'>{formatNumber(price, 2)}</p>
+                <p className='propertyPrice'>{formatNumber(price, 2)}</p>
             </div>
 
             <PriceInput handlePriceChange={handlePriceChange} value={formatNumber(price, 0, false)}/>
@@ -283,8 +283,8 @@ const Calculator = () => {
 
             <ResultContainer header='Your stamp duty will be' result_value={formatNumber(totalDuty, 2)}/>
 
-            <div className='alert_text_container'>
-                <p className='alert_text'>You do not qualify for first-time buyer stamp duty tax relief because the property is over
+            <div className='alertTextContainer'>
+                <p className='alertText'>You do not qualify for first-time buyer stamp duty tax relief because the property is over
                     £500,000.00. Normal tax rates apply</p>
             </div>
         </div>
