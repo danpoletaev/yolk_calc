@@ -1,8 +1,9 @@
 $phone: 640px;
 $tablet: 768px;
 $desktop: 1024px;
+$wide-desktop: 1281px;
 
-@import "/mixins";
+@import "./mixins";
 
 // colors #e1e5eb;
 $font-color: #58677d;
@@ -16,7 +17,7 @@ $input-button-background: #f7f8fb;
 //font-sizes
 $phone-font-size: 16px;
 $phone-alert-f-size: 14px;
-$phone-result-f-size: 32px;
-$tablet-font-size: 20px;
+$phone-result-f-size: 20px;
+$tablet-font-size: 18px;
 $tablet-alert-f-size: 18px;
-$tablet-result-f-size: 40px;
+$tablet-result-f-size: 25px;

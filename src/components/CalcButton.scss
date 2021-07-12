@@ -16,7 +16,12 @@
 
 @media(min-width: $tablet) {
   .calcButton {
-    padding: 15px;
     font-size: $tablet-font-size;
+  }
+}
+
+@media(min-width: $wide-desktop) {
+  .calcButton {
+    padding: 15px;
   }
 }

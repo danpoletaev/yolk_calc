@@ -7,6 +7,7 @@
   padding: 30px;
   box-shadow: -1px 1px 10px $border-shadow-color;
   font-family: Lato,sans-serif;
+  background: white;
 }
 
 label, select{
@@ -38,6 +39,7 @@ p.propertyPrice {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 15px;
 }
 
 .alertText {
@@ -52,6 +54,7 @@ p.propertyPrice {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
 }
 
 *:focus {
